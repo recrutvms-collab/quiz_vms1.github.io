@@ -3,6 +3,14 @@ let history = [];
 
 const root = document.getElementById("quiz-root");
 
+function renderFooter() {
+  return `
+    <div class="footer-copyright">
+      © 3-ій Центр рекрутингу ВМС ЗСУ, 2026 рік | <a href="https://recrutvms.mil.gov.ua/?utm_source=quiz&utm_medium=referral&utm_campaign=quiz_vms " target="_blank" rel="noopener">recrutvms.mil.gov.ua</a> — БІЛЬШЕ НІЖ МОРЕ
+    </div>
+  `;
+}
+
 function renderStart() {
   root.innerHTML = `
     <img class="step-image start-image" src="${startScreen.image}" alt="">
@@ -13,6 +21,7 @@ function renderStart() {
       <button class="btn-restart" id="start-btn">${startScreen.cta}</button>
       <div class="start-note">${startScreen.ctaNote}</div>
     </div>
+    ${renderFooter()}
   `;
 
   document.getElementById("start-btn").addEventListener("click", () => {
@@ -49,6 +58,7 @@ function renderQuestion(id) {
       `).join("")}
     </div>
     ${renderBackButton()}
+    ${renderFooter()}
   `;
 
   document.querySelectorAll(".option-btn").forEach(btn => {
@@ -76,6 +86,8 @@ function renderResult(id) {
     </div>
     ${renderBackButton()}
     <button class="btn-restart" id="restart-btn">Почати знову</button>
+    <a class="btn-jobs" href="https://recrutvms.mil.gov.ua/?utm_source=quiz&utm_medium=referral&utm_campaign=quiz_vms" target="_blank" rel="noopener">Переглянути вакансії в Центрі рекрутингу ВМС</a>
+    ${renderFooter()}
   `;
 
   const backBtn = document.getElementById("back-btn");
