@@ -85,8 +85,8 @@ function renderResult(id) {
       <p class="result-description">${r.description}</p>
     </div>
     ${renderBackButton()}
+    <a class="btn-jobs" href="${r.jobUrl}" target="_blank" rel="noopener">Переглянути вакансії в Центрі рекрутингу ВМС</a>
     <button class="btn-restart" id="restart-btn">Почати знову</button>
-    <a class="btn-jobs" href="https://recrutvms.mil.gov.ua/?utm_source=quiz&utm_medium=referral&utm_campaign=quiz_vms" target="_blank" rel="noopener">Переглянути вакансії в Центрі рекрутингу ВМС</a>
     ${renderFooter()}
   `;
 
